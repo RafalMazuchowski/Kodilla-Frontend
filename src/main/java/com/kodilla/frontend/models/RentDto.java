@@ -5,15 +5,16 @@ public class RentDto {
     private Long borrowerId;
     private Long carId;
     private Integer distance;
-    private String placeOfRent;
-    private String placeOfReturn;
+    private Rental placeOfRent;
+    private Rental placeOfReturn;
     private Boolean carReturned;
     private Integer price;
 
     public RentDto() {
     }
 
-    public RentDto(Long rentId, Long borrowerId, Long carId, Integer distance, String placeOfRent, String placeOfReturn, Boolean carReturned, Integer price) {
+    public RentDto(Long rentId, Long borrowerId, Long carId, Integer distance,
+                   Rental placeOfRent, Rental placeOfReturn, Boolean carReturned, Integer price) {
         this.rentId = rentId;
         this.borrowerId = borrowerId;
         this.carId = carId;
@@ -40,11 +41,11 @@ public class RentDto {
         return distance;
     }
 
-    public String getPlaceOfRent() {
+    public Rental getPlaceOfRent() {
         return placeOfRent;
     }
 
-    public String getPlaceOfReturn() {
+    public Rental getPlaceOfReturn() {
         return placeOfReturn;
     }
 
@@ -54,5 +55,33 @@ public class RentDto {
 
     public Integer getPrice() {
         return price;
+    }
+
+    public void setBorrowerId(Long borrowerId) {
+        this.borrowerId = borrowerId;
+    }
+
+    public void setCarId(Long carId) {
+        this.carId = carId;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
+
+    public void setPlaceOfRent(Rental placeOfRent) {
+        this.placeOfRent = placeOfRent;
+    }
+
+    public void setPlaceOfReturn(Rental placeOfReturn) {
+        this.placeOfReturn = placeOfReturn;
+    }
+
+    public void setCarReturned(Boolean carReturned) {
+        this.carReturned = carReturned;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
