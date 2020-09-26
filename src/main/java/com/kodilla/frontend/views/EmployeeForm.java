@@ -1,4 +1,4 @@
-package com.kodilla.frontend;
+package com.kodilla.frontend.views;
 
 import com.kodilla.frontend.models.Degree;
 import com.kodilla.frontend.models.EmployeeDto;
@@ -16,7 +16,7 @@ import com.vaadin.flow.data.binder.PropertyId;
 public class EmployeeForm extends FormLayout {
 
     private EmployeeService employeeService = EmployeeService.getInstance();
-    private MainView mainView;
+    private EmployeesView employeeView;
 
     @PropertyId("fullName")
     private TextField name = new TextField("Name");
@@ -26,7 +26,7 @@ public class EmployeeForm extends FormLayout {
     private Button delete = new Button("Delete");
     private Binder <EmployeeDto>binder = new Binder<>(EmployeeDto.class);
 
-    public EmployeeForm(MainView mainView){
+    public EmployeeForm(EmployeesView employeeView){
 
         degree.setItems(Degree.values());
         HorizontalLayout buttons = new HorizontalLayout(save, delete);
@@ -37,20 +37,20 @@ public class EmployeeForm extends FormLayout {
 
         save.addClickListener(event -> save());
         delete.addClickListener(event -> delete());
-        this.mainView = mainView;
+        this.employeeView = employeeView;
     }
 
     private void save() {
         EmployeeDto employeeDto = binder.getBean();
         employeeService.createEmployee(employeeDto);
-        mainView.refresh();
+        employeeView.refresh();
         setEmployee(null);
     }
 
     private void delete() {
         EmployeeDto employeeDto = binder.getBean();
         employeeService.deleteEmployee(employeeDto.getEmployeeId());
-        mainView.refresh();
+        employeeView.refresh();
         setEmployee(null);
     }
 
