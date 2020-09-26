@@ -1,12 +1,12 @@
-package com.kodilla.frontend.domain;
+package com.kodilla.frontend.models;
 
 
 public class EmployeeDto {
     private Long employeeId;
     private String fullName;
-    private String degree;
+    private Degree degree;
 
-    public EmployeeDto(Long employeeId, String fullName, String degree) {
+    public EmployeeDto(Long employeeId, String fullName, Degree degree) {
         this.employeeId = employeeId;
         this.fullName = fullName;
         this.degree = degree;
@@ -23,7 +23,15 @@ public class EmployeeDto {
         return fullName;
     }
 
-    public String getDegree() {
+    public Degree getDegree() {
         return degree;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setDegree(Degree degree) {
+        this.degree = degree;
     }
 }

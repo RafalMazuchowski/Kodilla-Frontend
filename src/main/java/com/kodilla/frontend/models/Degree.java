@@ -1,4 +1,4 @@
-package com.kodilla.frontend.domain;
+package com.kodilla.frontend.models;
 
 public enum Degree {
     TRAINEE, WORKER, SUPERVISOR, MANAGER, CHIEF
