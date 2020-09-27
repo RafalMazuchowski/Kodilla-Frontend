@@ -9,8 +9,11 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
 
 @Route
+@Theme(value = Lumo.class, variant = Lumo.DARK)
 public class MainView extends VerticalLayout {
 
     public static final String BASE_API_URL = "http://localhost:8080/";
@@ -39,7 +42,7 @@ public class MainView extends VerticalLayout {
             Notification.show("employees");
         });
         HorizontalLayout menu = new HorizontalLayout();
-        menu.add(new Button("Click", e -> Notification.show("xD")), cars, rents, employees);
+        menu.add(cars, rents, employees);
         add(menu);
         currentView = employeesView;
         add(employeesView);

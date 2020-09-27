@@ -1,7 +1,6 @@
 package com.kodilla.frontend.views;
 
 import com.kodilla.frontend.models.RentDto;
-import com.kodilla.frontend.models.Rental;
 import com.kodilla.frontend.services.RentService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
